@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高分子材料科學 題庫測驗系統</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            overflow: hidden;
+        }
+        .quiz-header {
+            background-color: #4f46e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .quiz-body {
+            padding: 30px;
+        }
+        .question {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .question-img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            line-height: 1.4;
+        }
+        .options li:hover {
+            background-color: #e0e7ff;
+        }
+        .options li.correct {
+            background-color: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+            pointer-events: none;
+        }
+        .options li.wrong {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        .result {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 30px;
+        }
+        button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4338ca;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+        <h2 id="quiz-title">Polymer Materials Science</h2>
+        <p id="progress">題目 1 / 100</p>
+    </div>
+    <div class="quiz-body" id="quiz-body">
+        <div class="question" id="question">題目載入中...</div>
+        
+        <div class="image-container" id="image-container">
+            <img id="question-img" class="question-img" src="" alt="題目圖片">
+        </div>
+
+        <ul class="options" id="options"></ul>
+    </div>
+</div>
+
+<script src="quizData.js"></script>
+<script>
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let isFirstTry = true;
+    let randomizedQuizData = []; // 用來裝打亂後的題庫
+
+    const questionEl = document.getElementById('question');
+    const imageContainer = document.getElementById('image-container');
+    const questionImgEl = document.getElementById('question-img');
+    const optionsEl = document.getElementById('options');
+    const progressEl = document.getElementById('progress');
+    const quizBody = document.getElementById('quiz-body');
+
+    // 🎲 洗牌函數 (Fisher-Yates Shuffle)
+    function shuffleArray(array) {
+        let shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    }
+
+    function loadQuestion() {
+        isFirstTry = true; 
+        // 讀取已經打亂的題庫
+        const currentQuizData = randomizedQuizData[currentQuestionIndex];
+        
+        // 題目文字
+        questionEl.innerText = currentQuizData.question;
+        progressEl.innerText = `題目 ${currentQuestionIndex + 1} / ${randomizedQuizData.length}`;
+        
+        // 處理圖片 (依照題目原本的 ID 去抓圖片)
+        if (currentQuizData.hasImage) {
+            imageContainer.style.display = 'block';
+            questionImgEl.src = `images/q${currentQuizData.id}.png`; 
+        } else {
+            imageContainer.style.display = 'none';
+        }
+        
+        // 處理選項
+        optionsEl.innerHTML = '';
+        currentQuizData.options.forEach((option, index) => {
+            const li = document.createElement('li');
+            li.innerText = option;
+            li.onclick = () => selectOption(index, li, currentQuizData.answer);
+            optionsEl.appendChild(li);
+        });
+    }
+
+    function selectOption(selectedIndex, selectedLi, correctAnswerIndex) {
+        const allOptions = optionsEl.querySelectorAll('li');
+
+        if (selectedIndex === correctAnswerIndex) {
+            selectedLi.classList.add('correct');
+            if (isFirstTry) score++; 
+            allOptions.forEach(li => li.style.pointerEvents = 'none');
+
+            setTimeout(() => {
+                nextQuestion();
+            }, 800); // 答對後 0.8 秒自動跳下一題
+        } else {
+            selectedLi.classList.add('wrong');
+            isFirstTry = false; 
+        }
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < randomizedQuizData.length) {
+            loadQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        quizBody.innerHTML = `
+            <div class="result">
+                🎉 測驗結束！<br><br>
+                您的「一發命中」得分： ${score} / ${randomizedQuizData.length} 題
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="location.reload()">重新測驗 (題目將再次洗牌)</button>
+            </div>
+        `;
+    }
+
+    // 🚀 網頁載入時啟動
+    window.onload = () => {
+        if (typeof quizData !== 'undefined' && quizData.length > 0) {
+            // 載入時先洗牌一次
+            randomizedQuizData = shuffleArray(quizData);
+            loadQuestion();
+        } else {
+            questionEl.innerHTML = "<span style='color:red;'>⚠️ 無法載入題庫！請確認 quizData.js 是否與本網頁放在同一個資料夾。</span>";
+        }
+    };
+</script>
+
+</body>
+</html>
