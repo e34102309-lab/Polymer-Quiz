@@ -698,4 +698,5 @@ const quizData = [
         hasImage: true,
         options: ["a. Hydrogen (H 2 )", "b. Carbon dioxide (CO 2 )", "c. Oxygen (O 2 )", "d. Nitrogen (N 2 )"],
         answer: 3 // A=0, B=1, C=2, D=3
-    },
+    }   
+];
