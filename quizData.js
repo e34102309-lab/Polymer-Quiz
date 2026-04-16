@@ -80,7 +80,7 @@ const quizData = [
         id: 12,
         question: "12. Which polymerization method listed below is the only method that can delivered isotactic polypropylene?",
         hasImage: false,
-        options: ["a. Radical polymerization", "b. Anionic polymerization", "c. Cationic polymerization", "d. Metal coordinated insertion polymerization"],
+        options: ["a. Radical polymerization", "b. Anionic polymerization", "c. Cationic polymerization", "d. Metal coordinated insertion polymerization 3"],
         answer: 3
     },
     {
@@ -129,7 +129,7 @@ const quizData = [
         id: 19,
         question: "19. Which average molecular weight listed below in a polymer has the highest value?",
         hasImage: false,
-        options: ["a. Weight average molecular weight", "b. Viscosity average molecular weight", "c. Z average molecular weight", "d. Number average molecular weight"],
+        options: ["a. Weight average molecular weight", "b. Viscosity average molecular weight", "c. Z average molecular weight", "d. Number average molecular weight 4"],
         answer: 2
     },
     {
@@ -171,7 +171,7 @@ const quizData = [
         id: 25,
         question: "25. What kind of polymer is the one shown below?",
         hasImage: true,
-        options: ["a. Isotactic polypropylene", "b. Isotactic polystyrene", "c. Syndiotactic polypropylene", "d. Syndiotactic polystyrene"],
+        options: ["a. Isotactic polypropylene", "b. Isotactic polystyrene", "c. Syndiotactic polypropylene", "d. Syndiotactic polystyrene 5"],
         answer: 3
     },
     {
@@ -185,7 +185,7 @@ const quizData = [
         id: 27,
         question: "27. In accordance to the measured intrinsic viscosity values of polyisobutene (designated A in the plot) in various solvents with different solubility parameters as shown below, what is the solubility parameter of polyisobutene (also called polyisobutylene)?",
         hasImage: true,
-        options: ["a. 7.4 (cal/cm 3 ) 1/2", "b. 7.9 (cal/cm 3 ) 1/2", "c. 8.8 (cal/cm 3 ) 1/2", "d. 9.2 (cal/cm 3 ) 1/2"],
+        options: ["a. 7.4 (cal/cm 3 ) 1/2", "b. 7.9 (cal/cm 3 ) 1/2", "c. 8.8 (cal/cm 3 ) 1/2", "d. 9.2 (cal/cm 3 ) 1/2 6"],
         answer: 1
     },
     {
@@ -234,7 +234,7 @@ const quizData = [
         id: 34,
         question: "34. Which polymer listed below is preferred to be polymerized in a “batch” polymerization reactor due to the slow growth in molecular weight, instead of a continuous polymerization reactor, to achieve high conversions and molecular weights?",
         hasImage: false,
-        options: ["a. Polyisobutylene by cationic polymerization", "b. Polyethylene terephthalate by condensation polymerization (esterification)", "c. Polypropylene by metal coordinated insertion polymerization", "d. Polymethyl methacrylate by emulsion radical polymerization"],
+        options: ["a. Polyisobutylene by cationic polymerization", "b. Polyethylene terephthalate by condensation polymerization (esterification)", "c. Polypropylene by metal coordinated insertion polymerization", "d. Polymethyl methacrylate by emulsion radical polymerization 7"],
         answer: 1
     },
     {
@@ -269,7 +269,7 @@ const quizData = [
         id: 39,
         question: "39. Which polyethylene listed below has many long chain branches that is produced by high- pressure free radical polymerization?",
         hasImage: false,
-        options: ["a. HDPE (high density polyethylene)", "b. LDPE (low density polyethylene)", "c. LLDPE (linear low density polyethylene)"],
+        options: ["a. HDPE (high density polyethylene)", "b. LDPE (low density polyethylene)", "c. LLDPE (linear low density polyethylene) 8"],
         answer: 1
     },
     {
@@ -311,7 +311,7 @@ const quizData = [
         id: 45,
         question: "45. What is the most preferred composition distribution in a polyethylene copolymer to maximize its tie chain concentration for toughness while maintaining good processability?",
         hasImage: false,
-        options: ["a. A uniform composition distribution (both short and long chains have the same", "b. A slope down composition distribution where short chain has a higher co-monomer", "c. A step-up composition distribution where all short chains have a lower co-monomer"],
+        options: ["a. A uniform composition distribution (both short and long chains have the same monomer content)", "b. A slope down composition distribution where short chain has a higher co-monomer content with co-monomer content decreasing with increasing chain length, or molecular weight)", "c. A step-up composition distribution where all short chains have a lower co-monomer content while all long chains have a higher co-monomer content 9"],
         answer: 2
     },
     {
@@ -325,14 +325,14 @@ const quizData = [
         id: 47,
         question: "47. How many material components one can find in an ICP (impact copolymer) obtained from serial slurry-gas phase polymerization using multi-site ZN (Ziegler-Natta) titanium chloride supported on magnesium chloride catalysts",
         hasImage: false,
-        options: ["a. One (PP)", "b. Two (PP and EP)", "c. Three (iPP (isotactic), aPP (atactic), and EP)", "d. Four (iPP, aPP, EPR (ethylene-propylene amorphous rubber), EPC (ethylene-"],
+        options: ["a. One (PP)", "b. Two (PP and EP)", "c. Three (iPP (isotactic), aPP (atactic), and EP)", "d. Four (iPP, aPP, EPR (ethylene-propylene amorphous rubber), EPC (ethylene- propylene crystalline soft plastic))"],
         answer: 3
     },
     {
         id: 48,
         question: "48. Four generations of ZN (Ziegler-Natta) catalysts, from benzoate to phthalate to diether to succinate internal donors, cannot deliver PDI for a polypropylene (PP) homopolymer that is low enough to satisfy the needs of spun bond and melt blown fiber spinning as shown by the figure below. To deliver a lower PDI in a PP homopolymer, what is the process that a PP producer commonly used?",
         hasImage: true,
-        options: ["a. Peroxide chain scission", "b. Peroxide crosslinking", "c. Peroxide grafting", "d. Electron beam irradiation"],
+        options: ["a. Peroxide chain scission", "b. Peroxide crosslinking", "c. Peroxide grafting", "d. Electron beam irradiation 10"],
         answer: 0
     },
     {
@@ -353,7 +353,7 @@ const quizData = [
         id: 51,
         question: "51. ABS, acrylonitrile-butadiene-styrene, plastic is",
         hasImage: false,
-        options: ["a. A terpolymer by copolymerizing acrylonitrile, butadiene, and styrene monomers", "b. A binary blend of styrene-acrylonitrile copolymer with polybutadiene homopolymer", "c. A ternary blend of styrene-acrylonitrile copolymer, polybutadiene homopolymer,", "d. A ternary blend of polyacrylonitrile, polystyrene, and polybutadiene"],
+        options: ["a. A terpolymer by copolymerizing acrylonitrile, butadiene, and styrene monomers", "b. A binary blend of styrene-acrylonitrile copolymer with polybutadiene homopolymer", "c. A ternary blend of styrene-acrylonitrile copolymer, polybutadiene homopolymer, and comb-block copolymer with polybutadiene comb arms and styrene-acrylonitrile copolymer backbone", "d. A ternary blend of polyacrylonitrile, polystyrene, and polybutadiene"],
         answer: 2
     },
     {
@@ -381,7 +381,7 @@ const quizData = [
         id: 55,
         question: "55. Which crystallization statement shown below is correct",
         hasImage: false,
-        options: ["a. Coil dimension is preserved (not changed) during crystallization", "b. Coil dimension is reduced during crystallization", "c. Coil dimension is raised during crystallization", "d. Coils no longer exist, all chains become fully extended (no coil dimension)"],
+        options: ["a. Coil dimension is preserved (not changed) during crystallization", "b. Coil dimension is reduced during crystallization", "c. Coil dimension is raised during crystallization", "d. Coils no longer exist, all chains become fully extended (no coil dimension) 11"],
         answer: 0
     },
     {
@@ -423,7 +423,7 @@ const quizData = [
         id: 61,
         question: "61. Among the hierarchical crystalline structures in a plastic, which crystalline structure is responsible for the visible light scattering and the low light transparency in a plastic film?",
         hasImage: false,
-        options: ["a. Crystal unit cell", "b. Chain folded crystals", "c. Crystalline-amorphous lamellae", "d. Spherulites of lamellae assembly"],
+        options: ["a. Crystal unit cell", "b. Chain folded crystals", "c. Crystalline-amorphous lamellae", "d. Spherulites of lamellae assembly 12"],
         answer: 3
     },
     {
@@ -451,7 +451,7 @@ const quizData = [
         id: 65,
         question: "65. A fatter chain would be more difficult to entangle and has a higher entanglement molecular weight. Which polyolefin listed below would have the highest entanglement molecular weight?",
         hasImage: false,
-        options: ["a. Polyethylene", "b. Polypropylene", "c. Polybutene", "d. Polyhexene"],
+        options: ["a. Polyethylene", "b. Polypropylene", "c. Polybutene", "d. Polyhexene ↑ 13"],
         answer: 3
     },
     {
@@ -500,7 +500,7 @@ const quizData = [
         id: 72,
         question: "72. Which rheometer listed below can only measure shear viscosity at relatively low shear rate, below 100 1/s shear rate?",
         hasImage: false,
-        options: ["a. SAOS- small amplitude oscillatory shear", "b. Capillary rheometer", "c. SER- Sentmanat extensional rheometer", "d. Rheotens- melt strength rheometer"],
+        options: ["a. SAOS- small amplitude oscillatory shear", "b. Capillary rheometer", "c. SER- Sentmanat extensional rheometer", "d. Rheotens- melt strength rheometer 14"],
         answer: 0
     },
     {
@@ -528,7 +528,7 @@ const quizData = [
         id: 76,
         question: "76. Shear thinning can be found in all polymer melts. The slope of the shear thinning, or the so- called power law coefficient, is",
         hasImage: true,
-        options: ["a. Same for all polymers, but have a deeper slope with long chain branches", "b. Same for all polymers with dispersive interactions, only have more shallow slopes", "c. Depend on the polymer type, different for different polymers, but do not change", "d. Depend on the polymer type, different for different polymers, also change with"],
+        options: ["a. Same for all polymers, but have a deeper slope with long chain branches", "b. Same for all polymers with dispersive interactions, only have more shallow slopes for polymer with specific polar interactions", "c. Depend on the polymer type, different for different polymers, but do not change with molecular weight distribution or with long chain branches", "d. Depend on the polymer type, different for different polymers, also change with molecular weight distribution or with long chain branches (become stronger with deeper slope) "],
         answer: 2
     },
     {
@@ -542,7 +542,7 @@ const quizData = [
         id: 78,
         question: "78. Viscosity curves of 5 polyethylene melts measured at 150C can be found below, which PE shown in the plot is expected to be linear (no long chain branches) and with narrow molecular weight distribution (possibly by metallocene catalyst)?",
         hasImage: true,
-        options: ["a. PE1", "b. PE2", "c. PE3", "d. PE4"],
+        options: ["a. PE1", "b. PE2", "c. PE3", "d. PE4 16"],
         answer: 3
     },
     {
@@ -577,7 +577,7 @@ const quizData = [
         id: 83,
         question: "83. Which statement regarding polyethylene solubility listed below is correct?",
         hasImage: false,
-        options: ["a. All polyethylene homo and copolymers are miscible provided that the co-monomers", "b. HDPE (high density PE) and LDPE (low density PE) are immiscible", "c. HDPE (high density PE with a density of 0.95) and POE (polyolefin elastomer with", "d. LLDPE (linear low density PE) with hexene comonomer of 0.92 density is miscible"],
+        options: ["a. All polyethylene homo and copolymers are miscible provided that the co-monomers used in copolymers are alpha olefin (such as propylene, butene, hexene, or octene)", "b. HDPE (high density PE) and LDPE (low density PE) are immiscible", "c. HDPE (high density PE with a density of 0.95) and POE (polyolefin elastomer with density of 0.87) are miscible", "d. LLDPE (linear low density PE) with hexene comonomer of 0.92 density is miscible with EVA (ethylene vinyl acetate copolymer) of 0.92 density 17"],
         answer: 1
     },
     {
@@ -591,21 +591,21 @@ const quizData = [
         id: 85,
         question: "85. Coextrusion of an ABA layer structure with a blue polymer A and a green polymer B through a flat co-extrusion die leads to the cross-sectional morphology shown below. This is caused",
         hasImage: true,
-        options: ["a. High viscosity of polymer B, much higher than the viscosity of polymer A", "b. High viscosity of polymer A, higher that the viscosity of polymer B", "c. Different melt elasticity between polymers A and B with polymer A greater than", "d. Not by viscoelasticity differences, probably by the co-extrusion die design"],
+        options: ["a. High viscosity of polymer B, much higher than the viscosity of polymer A", "b. High viscosity of polymer A, higher that the viscosity of polymer B", "c. Different melt elasticity between polymers A and B with polymer A greater than polymer B", "d. Not by viscoelasticity differences, probably by the co-extrusion die design"],
         answer: 0
     },
     {
         id: 86,
         question: "86. Using peroxide assisted reactive extrusion grafting of maleic anhydride onto polyolefins at extrusion temperatures greater than 200C. Which polyolefin listed below would have predominantly chain end grafting of maleic anhydride, instead of in-chain grafting?",
         hasImage: false,
-        options: ["a. Polyethylene", "b. Polystyrene", "c. Polypropylene", "d. POE (polyolefin elastomer) which is a copolymer of ethylene and octene with greater"],
+        options: ["a. Polyethylene", "b. Polystyrene", "c. Polypropylene", "d. POE (polyolefin elastomer) which is a copolymer of ethylene and octene with greater than 10% octene"],
         answer: 2
     },
     {
         id: 87,
         question: "87. Which statement below is correct in describing the process of compatibilization of immiscible polymer blends",
         hasImage: false,
-        options: ["a. Compatibilizer is used to enhance drop breakup and has no effects on coalescence", "b. Interfacial reactive compatibilization using maleic anhydride grafted EPDM in", "c. 5 to 10% of compatibilizers sufficient to suppress coalescence and can deliver fine", "d. Block copolymer compatibilizers must be di-block copolymers, cannot be tri-block"],
+        options: ["a. Compatibilizer is used to enhance drop breakup and has no effects on coalescence", "b. Interfacial reactive compatibilization using maleic anhydride grafted EPDM in polyamide is less effective (in providing fine EPDM dispersions) than the use of deblock copolymeric compatibilizer in blends of EPDM and polyamide", "c. 5 to 10% of compatibilizers sufficient to suppress coalescence and can deliver fine dispersions in a polymer blend", "d. Block copolymer compatibilizers must be di-block copolymers, cannot be tri-block 18"],
         answer: 2
     },
     {
@@ -626,7 +626,7 @@ const quizData = [
         id: 90,
         question: "90. The dispersion states of montmorillonites in a clay-polyamide nanocomposite are shown below. From left to right, these morphologies display the state of montmorillonites, from dispersion to intercalation to exfoliation, where polyamide from being outside the clay, to penetrating, to pushing apart individual platelets. Which dispersion state of the clay is expected to provide the highest aspect ratio which, in turn, can provide lowest permeability value in this clay-polyamide nanocomposite.",
         hasImage: true,
-        options: ["a. Left, dispersion", "b. Center, intercalation", "c. Right, exfoliation"],
+        options: ["a. Left, dispersion", "b. Center, intercalation", "c. Right, exfoliation 19"],
         answer: 2
     },
     {
@@ -647,7 +647,7 @@ const quizData = [
         id: 93,
         question: "93. Which statement about the backbone structures of metallocene polypropylene, or isotactic polypropylene synthesized by metallocene catalysts, is correct?",
         hasImage: false,
-        options: ["a. Many different components, including atactic PP and stereo-block PP", "b. Broad molecular weight distribution with PDI greater than 5", "c. Only one isotactic PP component, but contains regio defects (or 2,1 insertion)", "d. Contain syndiotactic and atactic components in addition to isotactic PP component"],
+        options: ["a. Many different components, including atactic PP and stereo-block PP", "b. Broad molecular weight distribution with PDI greater than 5", "c. Only one isotactic PP component, but contains regio defects (or 2,1 insertion)", "d. Contain syndiotactic and atactic components in addition to isotactic PP component 20"],
         answer: 2
     },
     {
@@ -668,7 +668,7 @@ const quizData = [
         id: 96,
         question: "96. Which statement is incorrect in describing approaches to improve optical transparency, or reduce haze, of crystalline isotactic polypropylene homopolymer",
         hasImage: false,
-        options: ["a. Use nucleators to increase spherulite amount which, in turn, reduce spherulite size", "b. Biaxial orientation to suppress lamellae aggregation into spherulites", "c. Add clarifiers to significantly raise spherulite amount which, in turn, drastically", "d. Thermal annealing to promote lamellae aggregation and raise the spherulite size"],
+        options: ["a. Use nucleators to increase spherulite amount which, in turn, reduce spherulite size", "b. Biaxial orientation to suppress lamellae aggregation into spherulites", "c. Add clarifiers to significantly raise spherulite amount which, in turn, drastically reduce spherulite size", "d. Thermal annealing to promote lamellae aggregation and raise the spherulite size 21"],
         answer: 3
     },
     {
@@ -694,10 +694,8 @@ const quizData = [
     },
     {
         id: 100,
-        question: "100. 這裡請輸入第100題的題目",
+        question: "100. Based on the molecular size listed below, which gas molecule would permeate theslowest in a polyethylene?",
         hasImage: true,
         options: ["a. Hydrogen (H 2 )", "b. Carbon dioxide (CO 2 )", "c. Oxygen (O 2 )", "d. Nitrogen (N 2 )"],
-        answer: 4 
-    }
-];
-];
+        answer: 3 // A=0, B=1, C=2, D=3
+    },

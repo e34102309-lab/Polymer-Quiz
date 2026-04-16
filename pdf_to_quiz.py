@@ -80,7 +80,13 @@ def extract_quiz_data(pdf_path):
                         "text": clean_text,
                         "is_marked": is_marked or "underline" in line_text.lower()
                     })
-                    
+                    # 🌟 新增這一段：處理「被切斷的長選項」
+                elif current_q_num > 0 and len(current_options) > 0:
+                    # 如果這一行不是新題目，也不是新選項，且前面已經有選項了
+                    # 那這行就是「上一個選項」的延伸文字
+                    current_options[-1]["text"] += " " + line_text
+                    if is_marked: # 如果這行有標色，也要算進去
+                        current_options[-1]["is_marked"] = True
                 # 多行題目接續
                 elif current_q_num > 0 and len(current_options) == 0:
                     if len(line_text) > 3 and not line_text.isdigit():
