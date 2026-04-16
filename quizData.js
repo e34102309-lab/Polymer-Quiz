@@ -689,7 +689,15 @@ const quizData = [
         id: 99,
         question: "99. Which polymerization method is required to polymerize 3-methyl butene into the following structure?",
         hasImage: true,
-        options: ["a. Condensation polymerization", "b. Metal-coordinated insertion polymerization", "c. Cationic polymerization", "d. Free-radical polymerization", "a. Hydrogen (H 2 )", "b. Carbon dioxide (CO 2 )", "c. Oxygen (O 2 )", "d. Nitrogen (N 2 )"],
+        options: ["a. Condensation polymerization", "b. Metal-coordinated insertion polymerization", "c. Cationic polymerization", "d. Free-radical polymerization"],
         answer: 2
+    },
+    {
+        id: 100,
+        question: "100. 這裡請輸入第100題的題目",
+        hasImage: false,
+        options: ["a. Hydrogen (H 2 )", "b. Carbon dioxide (CO 2 )", "c. Oxygen (O 2 )", "d. Nitrogen (N 2 )"],
+        answer: 4 
     }
+];
 ];
