@@ -81,6 +81,14 @@
             pointer-events: none;
             opacity: 0.6;
         }
+        /* 新增：選項圖片的樣式 */
+        .option-img {
+            max-width: 100%;
+            max-height: 150px;
+            margin-top: 10px;
+            display: block;
+            border-radius: 4px;
+        }
         .result {
             text-align: center;
             font-size: 1.5rem;
@@ -124,7 +132,7 @@
     let currentQuestionIndex = 0;
     let score = 0;
     let isFirstTry = true;
-    let randomizedQuizData = []; // 用來裝打亂後的題庫
+    let randomizedQuizData = []; 
 
     const questionEl = document.getElementById('question');
     const imageContainer = document.getElementById('image-container');
@@ -145,14 +153,13 @@
 
     function loadQuestion() {
         isFirstTry = true; 
-        // 讀取已經打亂的題庫
         const currentQuizData = randomizedQuizData[currentQuestionIndex];
         
         // 題目文字
         questionEl.innerText = currentQuizData.question;
         progressEl.innerText = `題目 ${currentQuestionIndex + 1} / ${randomizedQuizData.length}`;
         
-        // 處理圖片 (依照題目原本的 ID 去抓圖片)
+        // 處理題目圖片
         if (currentQuizData.hasImage) {
             imageContainer.style.display = 'block';
             questionImgEl.src = `images/q${currentQuizData.id}.png`; 
@@ -164,7 +171,21 @@
         optionsEl.innerHTML = '';
         currentQuizData.options.forEach((option, index) => {
             const li = document.createElement('li');
-            li.innerText = option;
+            
+            // 1. 建立文字節點
+            const span = document.createElement('span');
+            span.innerText = option;
+            li.appendChild(span);
+
+            // 2. 判斷是否有選項圖片並加入
+            if (currentQuizData.optionImages && currentQuizData.optionImages[index]) {
+                const img = document.createElement('img');
+                img.src = currentQuizData.optionImages[index];
+                img.alt = `選項 ${option}`;
+                img.className = 'option-img'; // 套用我們上面新增的 CSS 樣式
+                li.appendChild(img);
+            }
+
             li.onclick = () => selectOption(index, li, currentQuizData.answer);
             optionsEl.appendChild(li);
         });
@@ -180,7 +201,7 @@
 
             setTimeout(() => {
                 nextQuestion();
-            }, 800); // 答對後 0.8 秒自動跳下一題
+            }, 800); 
         } else {
             selectedLi.classList.add('wrong');
             isFirstTry = false; 
@@ -211,7 +232,6 @@
     // 🚀 網頁載入時啟動
     window.onload = () => {
         if (typeof quizData !== 'undefined' && quizData.length > 0) {
-            // 載入時先洗牌一次
             randomizedQuizData = shuffleArray(quizData);
             loadQuestion();
         } else {
