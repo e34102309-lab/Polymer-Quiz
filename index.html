@@ -40,6 +40,14 @@
             margin-bottom: 15px;
             line-height: 1.5;
         }
+        /* 讓插在文字中間的圖片好看一點 */
+        .question img.inline-img {
+            vertical-align: middle;
+            max-height: 120px;
+            margin: 0 10px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
         .image-container {
             text-align: center;
             margin-bottom: 20px;
@@ -81,7 +89,7 @@
             pointer-events: none;
             opacity: 0.6;
         }
-        /* 新增：選項圖片的樣式 */
+        /* 選項圖片的樣式 */
         .option-img {
             max-width: 100%;
             max-height: 150px;
@@ -141,7 +149,7 @@
     const progressEl = document.getElementById('progress');
     const quizBody = document.getElementById('quiz-body');
 
-    // 🎲 洗牌函數 (Fisher-Yates Shuffle)
+    // 🎲 洗牌函數
     function shuffleArray(array) {
         let shuffled = [...array];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -155,11 +163,11 @@
         isFirstTry = true; 
         const currentQuizData = randomizedQuizData[currentQuestionIndex];
         
-        // 題目文字
-        questionEl.innerText = currentQuizData.question;
+        // ⚠️ 這裡改用 innerHTML，允許在題目文字裡插入 <img> 標籤！
+        questionEl.innerHTML = currentQuizData.question;
         progressEl.innerText = `題目 ${currentQuestionIndex + 1} / ${randomizedQuizData.length}`;
         
-        // 處理題目圖片
+        // 處理題目下方的大圖片 (例如 21, 22 題的結構式)
         if (currentQuizData.hasImage) {
             imageContainer.style.display = 'block';
             questionImgEl.src = `images/q${currentQuizData.id}.png`; 
@@ -167,7 +175,7 @@
             imageContainer.style.display = 'none';
         }
         
-        // 處理選項
+        // 處理選項 (21, 22 題的選項圖片會在這裡生成)
         optionsEl.innerHTML = '';
         currentQuizData.options.forEach((option, index) => {
             const li = document.createElement('li');
@@ -182,7 +190,7 @@
                 const img = document.createElement('img');
                 img.src = currentQuizData.optionImages[index];
                 img.alt = `選項 ${option}`;
-                img.className = 'option-img'; // 套用我們上面新增的 CSS 樣式
+                img.className = 'option-img'; 
                 li.appendChild(img);
             }
 
@@ -229,7 +237,6 @@
         `;
     }
 
-    // 🚀 網頁載入時啟動
     window.onload = () => {
         if (typeof quizData !== 'undefined' && quizData.length > 0) {
             randomizedQuizData = shuffleArray(quizData);
