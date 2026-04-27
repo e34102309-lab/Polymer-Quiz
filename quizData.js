@@ -371,9 +371,14 @@ const quizData = [
     },
     {
         id: 46,
-        question: "46. A tire tread compound of 65/35 SSBR/BR containing 60 phr silica (and silane coupling agent) and 7 phr oil has a co-continuous morphology due to the preferential partition of silica into SSBR and of oil into BR. Remember that co-continuity criterion is . If one wants to raise the silica content to 80 phr in this tire tread compound for a lower rolling resistance, what is the requirement to keep SSBR and BR co-continuous?",
-        hasImage: true,
-        options: ["a. Raise the SSBR content, instead of 65/35, to 70/30", "b. Lower the oil content and keep the same SSBR/BR ratio", "c. Increase the BR content and move SSBR/BR to 60/40", "d. No changes in formulation are required"],
+        question: "46. A tire tread compound of 65/35 SSBR/BR containing 60 phr silica (and silane coupling agent) and 7 phr oil has a co-continuous morphology due to the preferential partition of silica into SSBR and of oil into BR. Remember that co-continuity criterion is <img src='images/q46.png' class='inline-img'>. If one wants to raise the silica content to 80 phr in this tire tread compound for a lower rolling resistance, what is the requirement to keep SSBR and BR co-continuous?",
+        hasImage: false, // ⚠️ 因為圖片已經放在句子裡，這裡設為 false，避免下方再出現大圖
+        options: [
+            "a. Raise the SSBR content, instead of 65/35, to 70/30", 
+            "b. Lower the oil content and keep the same SSBR/BR ratio", 
+            "c. Increase the BR content and move SSBR/BR to 60/40", 
+            "d. No changes in formulation are required"
+        ],
         optionImages: [null, null, null, null],
         answer: 0
     },
